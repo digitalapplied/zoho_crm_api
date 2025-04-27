@@ -82,3 +82,18 @@ This script fetches leads from a specific custom view in Zoho CRM using the v8 A
 *   The script will fetch an access token and then the leads from the specified custom view.
 *   Lead data (up to 200 records) will be printed in JSON format.
 *   Check the console for logs and error messages.
+
+## Updating Lead Status to Junk
+
+The `update_lead_status.py` script allows you to update the `Lead_Status` field of specific leads to "Junk Lead".
+
+**Instructions:**
+
+1.  **Prepare Lead IDs:** Create a file named `junk_lead_ids.txt` in the same directory as the script. Add the Zoho Lead IDs you want to update to this file, with each ID on a new line.
+2.  **Configure:** Ensure your `.env` file is set up correctly as described in the "Setup and Running Instructions" section above. You can optionally change the `FIELD_TO_UPDATE` or `NEW_STATUS_VALUE` variables within the `update_lead_status.py` script if needed.
+3.  **Run the Update Script:** Execute the following command in your terminal from the script's directory:
+    ```bash
+    python update_lead_status.py
+    ```
+4.  **Confirm:** The script will show how many IDs it found and ask for confirmation before proceeding. Type `yes` to continue.
+5.  **Check Output:** The script will attempt to update each lead and print the success or failure status for each ID to the console. Detailed logs are also generated.
